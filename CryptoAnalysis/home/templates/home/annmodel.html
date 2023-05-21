@@ -1,0 +1,115 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+<title>QORA-ANN ANN MODEL</title>
+{% endblock title %}
+
+{% load static %}
+
+{% block link %}
+
+<link rel="stylesheet" href="{% static 'home/css/annmodel.css' %}">
+{% endblock link %}
+
+
+{% block content %}
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark " data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">QORA-ANN</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">ANN MODEL <i class="fas fa-cog"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#opp">Oppostion Learning <i class="fas fa-book"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#fut">Future Scope <i class="fas fa-home"></i> </a>
+        </li>
+        {% comment %} <li class="nav-item">
+          <a class="nav-link disabled">Disabled</a>
+        </li> {% endcomment %}
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="header" >
+
+  <h3 class="title mx-3 text-light" style='padding:35px;'>
+
+  What Is ANN Model ?
+
+
+  </h3>
+
+<a name="opp"></a>
+  <p class='title mx-5 text-light' >
+    "ANN" typically refers to Artificial Neural Network, which is a computational model inspired by the structure and functioning of biological neural networks in the human brain. An Artificial Neural Network is a machine learning model used for pattern recognition, classification, regression, and other tasks.
+
+In an Artificial Neural Network, information flows through interconnected nodes called artificial neurons or "nodes." These nodes are organized in layers: an input layer, one or more hidden layers, and an output layer. Each node receives input signals, applies a mathematical function to them, and produces an output signal that is passed on to the next layer. The connections between nodes are associated with weights, which determine the strength of the signal.
+
+During the training phase, an Artificial Neural Network learns to adjust the weights of its connections based on the input data and the desired output. This process involves forward propagation, where the input data is processed layer by layer, and backward propagation (also known as backpropagation), where the error between the network's output and the desired output is used to update the weights. Through repeated iterations of this process, the network improves its ability to make accurate predictions or perform specific tasks.
+
+Artificial Neural Networks have been successfully applied to various domains, including image recognition, natural language processing, speech recognition, and more. They are a fundamental component of deep learning, a subfield of machine learning that focuses on training large and complex neural networks.
+  </p>
+
+
+</div>
+
+<div class="what" style='background:black'>
+  <h3 class="title mx-3 text-light" style='padding:35px;' >
+
+    What Is Opposition Based Learning ?
+  
+  
+    </h3>
+  
+  
+    <p class='title mx-5 text-light' >
+      Opposition-Based Learning (OBL) is a concept that can be applied to enhance the training process of Artificial Neural Networks (ANNs). It involves the use of two complementary optimization strategies: the primary strategy and the opposition strategy.
+
+      In the primary strategy, the ANN's weights and biases are adjusted based on the typical gradient descent algorithms such as backpropagation. The goal is to minimize the error between the network's predicted output and the desired output.
+      
+      In the opposition strategy, an additional set of parameters is introduced that represents the opposite direction of the primary parameters. For example, if a weight in the primary strategy is positive, its corresponding opposite weight in the opposition strategy would be negative. Similarly, if a bias is increased in the primary strategy, it would be decreased in the opposition strategy. This creates a balance between exploration and exploitation during the optimization process.
+      
+      The opposition-based learning algorithm operates by updating both the primary and opposition parameters simultaneously. The performance of the network is evaluated using both sets of parameters, and the better-performing set is chosen for the subsequent iterations. This approach aims to improve the exploration of the search space by considering both the primary and opposite directions, potentially leading to faster convergence and better generalization.
+      
+      By incorporating the opposition-based learning concept into the training process of an ANN, it is possible to enhance the efficiency and effectiveness of the learning algorithm. However, it's important to note that opposition-based learning is just one of the many optimization techniques that can be applied in the context of ANN training, and its effectiveness may depend on the specific problem and dataset being considered.
+    </p>
+</div>
+
+
+<div class="what" style='overflow: hidden; background-color:black;'>
+
+<a name='fut'></a>
+  <div class="row">
+
+    <div class="col-sm-4">
+
+
+      <h3 class='title mx-5 text-light'>Future Scope</h3>
+
+      <ul class='title mx-5 text-light'>
+        <li>Adding More Crypto Currencies</li>
+        <li>Making Model More Efficient</li>
+        <li>Recommendation System</li>
+        <li>User Specific Recommendation System</li>
+        <li>Investment  Recommendation System</li>
+        <li>Providing Specilist Assistent</li>
+      </ul>
+
+    </div>
+
+    <div class="col-sm-8">
+      <img src="{% static 'home/images/annbtc.jpg'%}" alt="" class="img-fluid">
+    </div>
+  </div>
+
+</div>
+{% endblock content %}

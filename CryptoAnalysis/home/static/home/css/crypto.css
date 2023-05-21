@@ -1,0 +1,38 @@
+body{
+    background-color: #000;
+}
+.header{
+    background-image: url(./../images/large.jpg);
+    height: 500px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.headerp{
+    background-image: url(./../images/foot.jpg);
+    height: 500px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.headerb{
+    background-image: url(./../images/main.webp);
+    height: 500px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.headere{
+    background-image: url(./../images/etheriums.jpg);
+    height: 500px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.headerbnb{
+    background-image: url(./../images/bnbs.png);
+    height: 500px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+}

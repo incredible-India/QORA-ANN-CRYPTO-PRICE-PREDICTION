@@ -1,0 +1,192 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}
+<title>QORA-ANN Cryptocurrencies</title>
+{% endblock title %}
+
+
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'home/css/crypto.css' %}">
+<nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark " data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">QORA-ANN</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#btc">Bitcoin <i class="fa-brands fa-btc"></i> </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#eth">Etherium <i class="fa-brands fa-ethereum"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#bnb">Binance <i class="fa-solid fa-coins"></i></a>
+          </li>
+          {% comment %} <li class="nav-item">
+            <a class="nav-link disabled">Disabled</a>
+          </li> {% endcomment %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <div class="container">
+
+    <div class="row">
+<div class="col-sm-6">
+    <h4 class='text-light mt-2'> What is crypto currency ? </h4>
+    <p class="text-light">Cryptocurrencies are digital or virtual currencies that use cryptography for secure financial transactions, control the creation of new units, and verify the transfer of assets. They are decentralized and operate on a technology called blockchain, which is a distributed ledger maintained by a network of computers.
+
+        Unlike traditional fiat currencies issued by governments, cryptocurrencies are typically not controlled by any central authority, such as a central bank. This decentralized nature allows for peer-to-peer transactions without the need for intermediaries like banks. Cryptocurrencies offer the potential for secure, transparent, and efficient transactions.
+        
+        The most well-known cryptocurrency is Bitcoin, which was introduced in 2009. Since then, thousands of other cryptocurrencies, often referred to as altcoins, have been created. Examples include Ethereum, Ripple, Litecoin, Bitcoin Cash, and many others.
+        
+        Cryptocurrencies can be used for various purposes, including online purchases, investment, remittances, and even as a store of value. They can be bought, sold, and traded on cryptocurrency exchanges. The value of cryptocurrencies can be volatile, and their prices are determined by factors such as market demand, investor sentiment, regulatory developments, and technological advancements.
+        
+        It's important to note that investing in cryptocurrencies carries risks, and the market can be highly speculative. Before engaging in cryptocurrency transactions or investments, it's advisable to research and understand the associated risks, security measures, and regulatory considerations.</p>
+</div>
+
+<div class="col-sm-6">
+    
+  <div class="header">
+
+  </div>
+</div>
+    </div>
+
+
+
+
+
+
+
+    <div class="row">
+        <div class="col-sm-6">
+            
+            <div class="headerp">
+          
+            </div>
+          </div>
+        <div class="col-sm-6">
+            <h4 class='text-light mt-2'> How many crypto currencies exist ? </h4>
+            <p class="text-light">The number of cryptocurrencies is constantly changing as new ones are created and some become inactive or are delisted from exchanges. There were <b class='text-info'>thousands of cryptocurrencies in existence</b> . However, it's worth noting that not all of them have significant market capitalization or widespread adoption.
+
+                The most well-known cryptocurrencies, such as Bitcoin (BTC) and Ethereum (ETH), have gained significant popularity and market value. Additionally, there are several other established cryptocurrencies like Ripple (XRP), Litecoin (LTC), Bitcoin Cash (BCH), and many more.
+                
+                Apart from these established cryptocurrencies, there are numerous alternative coins or altcoins that serve various purposes or have specific functionalities. Some altcoins are built on their own blockchain networks, while others may be tokens or assets issued on existing blockchain platforms like Ethereum.
+                
+                Given the dynamic nature of the cryptocurrency market, it's recommended to refer to a reliable cryptocurrency tracking platform or market data provider to obtain the most up-to-date information on the number of cryptocurrencies in existence.</p>
+        </div>
+        
+   
+            </div>
+
+
+
+
+
+            <div class="row">
+                <a name="btc"></a>
+                <div class="col-sm-6">
+                    <h4 class='text-light mt-2'> Bitcoin <i class="fa-brands fa-btc"></i> </h4>
+                    <p class="text-light">Bitcoin (BTC) is the first and most well-known cryptocurrency, introduced in 2009 by an anonymous person or group using the pseudonym Satoshi Nakamoto. It operates on a decentralized network called the Bitcoin blockchain, which is a distributed ledger that records all transactions in a transparent and secure manner.
+
+                        Bitcoin was created with the aim of providing a peer-to-peer electronic cash system that would allow for secure and direct transactions without the need for intermediaries like banks. It uses cryptographic techniques to secure transactions and control the creation of new units. Bitcoin transactions are verified by network nodes through a process called mining, where miners compete to solve complex mathematical problems to add blocks of transactions to the blockchain.
+                        
+                        Bitcoin is often referred to as "digital gold" because, like gold, it is scarce and has a finite supply. The total supply of Bitcoin is capped at 21 million coins, making it a deflationary asset. This scarcity, along with its decentralized nature, has contributed to its value and the perception of Bitcoin as a store of value and a potential hedge against inflation.
+                        
+                        Bitcoin has gained significant attention and adoption over the years, with a growing number of merchants and businesses accepting it as a form of payment. Additionally, Bitcoin has attracted interest from investors as a speculative asset and has experienced significant price volatility throughout its history.
+                        
+                        The underlying technology of Bitcoin, known as blockchain, has also influenced the development of numerous other cryptocurrencies and blockchain applications. Bitcoin remains the most valuable and widely recognized cryptocurrency, often serving as a benchmark for the overall cryptocurrency market.</p>
+                </div>
+                <div class="col-sm-6">
+                    
+                    <div class="headerb">
+                  
+                    </div>
+                  </div>
+           
+                    </div>
+
+
+
+
+
+
+
+                    
+    <div class="row">
+        <a name="eth"></a>
+        <div class="col-sm-6">
+            
+            <div class="headere">
+          
+            </div>
+          </div>
+        <div class="col-sm-6">
+            <h4 class='text-light mt-2'> Etherium  <i class="fa-brands fa-ethereum"></i></h4>
+            <p class="text-light">Ethereum (ETH) is a decentralized, open-source blockchain platform that was launched in 2015 by a developer named Vitalik Buterin. It is one of the most well-known and widely used cryptocurrencies after Bitcoin.
+
+                Ethereum's blockchain is designed to enable the development and execution of smart contracts, which are self-executing agreements with predefined conditions and outcomes. Smart contracts on the Ethereum network allow for the creation of decentralized applications (DApps) that can be used for various purposes, including decentralized finance (DeFi), gaming, and decentralized exchanges.
+                
+                The native cryptocurrency of the Ethereum network is Ether (ETH). Ether serves multiple functions within the Ethereum ecosystem. It can be used as a means of value transfer, as a unit of account, and as a medium of exchange for services and transactions within the network. Additionally, Ether is used to incentivize participants in the Ethereum network, such as miners who validate and process transactions.
+                
+                One significant feature of Ethereum is its ability to support the creation of new tokens and projects through Initial Coin Offerings (ICOs) and token sales. Many blockchain-based projects and cryptocurrencies have been built on top of the Ethereum network, utilizing its smart contract capabilities.
+                
+                Ethereum is currently undergoing an upgrade from its original proof-of-work (PoW) consensus mechanism to a proof-of-stake (PoS) mechanism known as Ethereum 2.0. This upgrade aims to improve scalability, energy efficiency, and security within the Ethereum network.
+                
+                Overall, Ethereum has had a significant impact on the blockchain industry, fostering innovation and the development of decentralized applications beyond simple currency transactions.</p>
+        </div>
+        
+   
+            </div>
+
+
+
+
+
+
+
+            <div class="row">
+             <a name="bnb"></a>
+                <div class="col-sm-6">
+                    <h4 class='text-light mt-2'> Binance <i class="fa-solid fa-coins"></i> </h4>
+                    <p class="text-light">Binance is one of the largest and most popular cryptocurrency exchanges in the world. It was founded in 2017 by Changpeng Zhao and has quickly gained prominence in the cryptocurrency industry.
+
+                        As an exchange, Binance provides a platform for users to buy, sell, and trade a wide range of cryptocurrencies. It offers a user-friendly interface, advanced trading features, and a diverse selection of trading pairs. Binance supports both crypto-to-crypto trading and fiat-to-crypto trading in certain regions.
+                        
+                        In addition to its spot trading services, Binance also offers various other products and services. These include:
+                        
+                        1. Binance Futures: A derivatives platform that allows users to trade cryptocurrency futures contracts with leverage.
+                        
+                        2. Binance Launchpad: A platform for launching and investing in new blockchain projects through token sales and initial coin offerings (ICOs).
+                        
+                        3. Binance Staking: Users can stake their cryptocurrencies to earn passive income through staking rewards.
+                        
+                        4. Binance Savings: A service that allows users to earn interest on their cryptocurrency holdings by lending them to margin traders.
+                        
+                        5. Binance Card: A debit card that allows users to spend their cryptocurrencies at merchants that accept traditional payment methods.
+                        
+                        6. Binance Academy: An educational platform that provides resources and information about blockchain technology and cryptocurrencies.
+                        
+                        Binance has its own native cryptocurrency called Binance Coin (BNB). BNB can be used to pay for trading fees on the Binance exchange and offers additional benefits and discounts when used within the Binance ecosystem.
+                        
+                        It's worth noting that cryptocurrency investments and trading involve risks, and it's important to conduct thorough research and exercise caution when using any cryptocurrency exchange or trading platform.</p>
+                </div>
+                <div class="col-sm-6">
+                    
+                    <div class="headerbnb">
+                  
+                    </div>
+                  </div>
+           
+                    </div>
+
+
+  </div>
+{% endblock content %}

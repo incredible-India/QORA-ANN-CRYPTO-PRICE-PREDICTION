@@ -1,0 +1,578 @@
+{% extends 'core/base.html' %}
+
+
+{% load static %}
+
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'home/css/dash.css' %}">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+{% endblock link %}
+
+{% block content %}
+
+<div class="sidenav">
+  <h2 class="mx-2 text-light">Dashboard</h2>
+
+
+  <a href="{% url 'home' %}">Home </a>
+  <a href="#btc">Bitcoin <i class="fa-solid fa-bitcoin-sign"></i></a>
+  <a href="#eth">Etherium <i class="fa-brands fa-ethereum"></i></a>
+  <a href="#bnb">Binance <img src="{% static 'home/images/bnb.png'%}" class="img-fluid" style="height: 20px"></a>
+
+</div>
+
+<div class="main mt-2">
+  <h3>QORA-ANN: Quasi Opposition Based Rao Algorithm and Artificial Neural Network for Cryptocurrency Price Prediction</h3>
+ 
+
+
+  <hr>
+
+  <div class="conatiner mt-4"><b>Server Status   <i class="fas fa-cog"></i> : </b> <b class="errcode"></b> </div>
+
+
+
+{% comment %} for the live static price   {% endcomment %}
+
+<div class="row mt-4">
+
+
+  <h3>Live Statistics <i class="fa-solid fa-chart-simple"></i> </h3>
+
+  <div class="col-sm-4">
+
+    <div class="card text-center shadow-lg" style="background-image: linear-gradient(to right, white,orange)">
+ 
+      <div class="card-body">
+
+        <p> Bitcoin <i class="fa-solid fa-bitcoin-sign"></i></p>
+        <h5 class="card-title" id='btcprice'>$49.99</h5>
+       
+      </div>
+     
+    </div>
+
+
+   
+
+
+  </div>
+
+
+
+  <div class="col-sm-4">
+
+    <div class="card text-center shadow-lg" style="background-image: linear-gradient(to right, white,silver)">
+ 
+      <div class="card-body" >
+
+        <p> Etherium <i class="fa-brands fa-ethereum"></i></p>
+        <h5 class="card-title " id='ethprice' >$49.99</h5>
+       
+      </div>
+     
+    </div>
+
+
+   
+
+
+  </div>
+
+
+
+  <div class="col-sm-4">
+
+    <div class="card text-center shadow-lg"  style="background-image: linear-gradient(to right, white,yellow)">
+ 
+      <div class="card-body">
+
+        <p>Binance <img src="{% static 'home/images/bnb.png'%}" class="img-fluid" style="height: 20px"> </p>
+        <h5 class="card-title" id='bnbprice'>$49.99</h5>
+       
+      </div>
+     
+    </div>
+
+
+  </div>
+
+
+
+
+
+</div>
+ {% comment %} one row  end {% endcomment %}
+ <div class="row mt-3">
+  <div class="col-sm-4 ">
+
+    <div class="card text-center shadow-lg" style="background-image: linear-gradient(to top, white, transparent)">
+ 
+      <div class="card-body">
+        <p> Bitcoin <i class="fa-solid fa-bitcoin-sign"></i></p>
+        <div>
+          <canvas id="myChartbtc"></canvas>
+        </div>
+      
+      </div>
+     
+    </div>
+
+
+   
+
+
+  </div>
+
+
+
+  <div class="col-sm-4">
+
+    <div class="card text-center shadow-lg">
+ 
+      <div class="card-body">
+
+        <p> Etherium <i class="fa-brands fa-ethereum"></i></p>
+        <div>
+          <canvas id="myCharteth"></canvas>
+        </div>
+       
+      </div>
+     
+    </div>
+
+
+   
+
+
+  </div>
+
+
+
+  <div class="col-sm-4">
+
+    <div class="card text-center shadow-lg">
+ 
+      <div class="card-body">
+        <p>Binance <img src="{% static 'home/images/bnb.png'%}" class="img-fluid" style="height: 20px"> </p>
+        <div>
+          <canvas id="myChartbnb"></canvas>
+        </div>
+       
+       
+      </div>
+     
+    </div>
+
+
+  </div>
+
+
+
+
+
+</div>
+
+{% comment %} second row end  {% endcomment %}
+
+
+
+{% comment %} bitcoin service start from here  {% endcomment %}
+
+<div class="container mt-4">
+<a name='btc'></a>
+<h2 class="mx-2">BitCoin <i class="fa-solid fa-bitcoin-sign"></i></h2>
+
+
+<div class="row">
+
+
+  <div class="col-sm-4">
+
+  <h5 class="mx-2">Bitcoin</h5>
+
+  <h6 class="mx-2">Sysmbol <span id='sym'>BTC </span><img src="{% static 'home/images/btc.png'%}" class="img-fluid" style="height: 20px"> </h6>
+
+  </div>
+
+
+
+  <div class="col-sm-8">
+
+
+    <div class="row">
+
+      <div class="col-sm-6">
+
+        <p>BitCoin Price </p>
+
+        <h3 id='btcprc'></h3>
+
+      <span>
+        <h4 id='btcpercentchange' class=' badge badge-dark text-danger' title="percent change" > </h4> <h4 id='prch' class='badge badge-dark text-danger' title="price change" > </h4>
+      </span>
+<hr>
+
+      <div class="mb-4">
+      <h6 class='text-secondary '>Low  <h5 id='blow' class=' text-danger'> </h5></h6>
+      <hr>
+    <h6  class='text-secondary '>High    <h5 id='bhigh' class='text-success'> </h5></h6>
+      </div>
+      </div>
+
+
+
+
+      <div class="col-sm-6">
+
+      <h6 class='text-secondary '>Open Price   <h6 id="bopenprc" class='text-info'></h6></h6>
+      <hr>
+
+      <h6 class='text-secondary '>Best Bid Price   <span id="bbid" class='text-dark'></span></h6> 
+      <hr>     
+      <h6 class='text-secondary '>Best Ask Price   <span id="bask" class='text-dark'></span></h6>   
+      <hr>   
+      <h6 class='text-secondary '>Best Bid Quantity   <span id="bbidq" class='text-dark'></span></h6>  
+      <hr>    
+      <h6 class='text-secondary '>Best Bid Quantity   <span id="baskq" class='text-dark'></span></h6>      
+
+
+
+      </div>
+
+    </div>
+
+<hr>
+    <div class="row">
+
+      <div class="col-sm-6">
+        <h6 class="container text-dark"><b>QORA-ANN Model Prediction</b> <img src="{% static 'home/images/prediction.png'%}" class="img-fluid" style="height: 50px"> </h6>
+
+
+        <table class="table table-striped table-bordered table-hover">
+
+<thead>
+
+
+  <tr>
+    <td><b>Open Price</b></td>
+    <td><b>High Price </b></td>
+    <td><b>Low Price </b></td>
+  </tr>
+</thead>
+
+<tbody>
+  <tr>
+    <th  class="text-success">{{btco}}</th>
+    <th  class="text-success">{{btch}}</th>
+    <th class="text-danger">{{btcl}}</th>
+  </tr>
+</tbody>
+
+        </table>
+
+      </div>
+      <div class="col-sm-6">
+        
+      
+
+
+      </div>
+    </div>
+
+
+
+  </div>
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+{% comment %} bitcoin service ends here  {% endcomment %}
+
+<hr>
+
+{% comment %} etherium service start {% endcomment %}
+
+
+<div class="container mt-4">
+<a name='eth'></a>
+  <h2 class="mx-2">Etherium <i class="fa-brands fa-ethereum"></i></h2>
+  
+  
+  <div class="row">
+  
+  
+    <div class="col-sm-4">
+  
+    <h5 class="mx-2">Etherium</h5>
+  
+    <h6 class="mx-2">Sysmbol <span id='sym'>ETH </span><img src="{% static 'home/images/eth.png'%}" class="img-fluid" style="height: 20px"> </h6>
+  
+    </div>
+  
+  
+  
+    <div class="col-sm-8">
+  
+  
+      <div class="row">
+  
+        <div class="col-sm-6">
+  
+          <p>Etherium Price </p>
+  
+          <h3 id='ethprc'></h3>
+  
+        <span>
+          <h4 id='ebtcpercentchange' class=' badge badge-dark text-danger' title="percent change" > </h4> <h4 id='eprch' class='badge badge-dark text-danger' title="price change" > </h4>
+        </span>
+  <hr>
+  
+        <div class="mb-4">
+        <h6 class='text-secondary '>Low  <h5 id='eblow' class=' text-danger'> </h5></h6>
+        <hr>
+      <h6  class='text-secondary '>High    <h5 id='ebhigh' class='text-success'> </h5></h6>
+        </div>
+        </div>
+  
+  
+  
+  
+        <div class="col-sm-6">
+  
+        <h6 class='text-secondary '>Open Price   <h6 id="ebopenprc" class='text-info'></h6></h6>
+        <hr>
+  
+        <h6 class='text-secondary '>Best Bid Price   <span id="ebbid" class='text-dark'></span></h6> 
+        <hr>     
+        <h6 class='text-secondary '>Best Ask Price   <span id="ebask" class='text-dark'></span></h6>   
+        <hr>   
+        <h6 class='text-secondary '>Best Bid Quantity   <span id="ebbidq" class='text-dark'></span></h6>  
+        <hr>    
+        <h6 class='text-secondary '>Best Bid Quantity   <span id="ebaskq" class='text-dark'></span></h6>      
+  
+  
+  
+        </div>
+
+
+        
+<hr>
+<div class="row">
+
+  <div class="col-sm-6">
+    <h6 class="container text-dark"><b>QORA-ANN Model Prediction</b> <img src="{% static 'home/images/prediction.png'%}" class="img-fluid" style="height: 50px"> </h6>
+
+
+    <table class="table table-striped table-bordered table-hover">
+
+<thead>
+
+
+<tr>
+  <tr>
+    <td><b>Open Price</b></td>
+    <td><b>High Price </b></td>
+    <td><b>Low Price </b></td>
+  </tr>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<th  class="text-success">{{etho}}</th>
+<th  class="text-success">{{ethh}}</th>
+<th class="text-danger">{{ethl}}</th>
+</tr>
+</tbody>
+
+    </table>
+
+  </div>
+  <div class="col-sm-6">
+    
+  
+
+
+  </div>
+</div>
+
+
+
+  
+      </div>
+  
+  
+  
+    </div>
+  
+  
+  
+  
+  </div>
+  
+  
+  </div>
+
+  <hr>
+
+{% comment %} etherum service end {% endcomment %}
+{% comment %} etherium service start {% endcomment %}
+
+
+<div class="container mt-4">
+  <a name='bnb'></a>
+  <h2 class="mx-2">Binance <img src="{% static 'home/images/bnb.png'%}" class="img-fluid" style="height: 20px"> </h2>
+  
+  
+  <div class="row">
+  
+  
+    <div class="col-sm-4">
+  
+    <h5 class="mx-2">Binance</h5>
+  
+    <h6 class="mx-2">Sysmbol <span id='sym'>BNB </span><img src="{% static 'home/images/bnb.png'%}" class="img-fluid" style="height: 20px"> </h6>
+  
+    </div>
+  
+  
+  
+    <div class="col-sm-8">
+  
+  
+      <div class="row">
+  
+        <div class="col-sm-6">
+  
+          <p>Binance Price </p>
+  
+          <h3 id='bnbprc'></h3>
+  
+        <span>
+          <h4 id='bnbbtcpercentchange' class=' badge badge-dark text-danger' title="percent change" > </h4> <h4 id='bnbprch' class='badge badge-dark text-danger' title="price change" > </h4>
+        </span>
+  <hr>
+  
+        <div class="mb-4">
+        <h6 class='text-secondary '>Low  <h5 id='bnbblow' class=' text-danger'> </h5></h6>
+        <hr>
+      <h6  class='text-secondary '>High    <h5 id='bnbbhigh' class='text-success'> </h5></h6>
+        </div>
+        </div>
+  
+  
+  
+  
+        <div class="col-sm-6">
+  
+        <h6 class='text-secondary '>Open Price   <h6 id="bnbbopenprc" class='text-info'></h6></h6>
+        <hr>
+  
+        <h6 class='text-secondary '>Best Bid Price   <span id="bnbbbid" class='text-dark'></span></h6> 
+        <hr>     
+        <h6 class='text-secondary '>Best Ask Price   <span id="bnbbask" class='text-dark'></span></h6>   
+        <hr>   
+        <h6 class='text-secondary '>Best Bid Quantity   <span id="bnbbbidq" class='text-dark'></span></h6>  
+        <hr>    
+        <h6 class='text-secondary '>Best Bid Quantity   <span id="bnbbaskq" class='text-dark'></span></h6>      
+  
+  
+  
+        </div>
+
+
+        {% comment %} prediction value {% endcomment %}
+
+
+        
+<hr>
+<div class="row">
+
+  <div class="col-sm-6">
+    <h6 class="container text-dark"><b>QORA-ANN Model Prediction</b> <img src="{% static 'home/images/prediction.png'%}" class="img-fluid" style="height: 50px"> </h6>
+
+
+    <table class="table table-striped table-bordered table-hover">
+
+<thead>
+
+
+<tr>
+  
+    <td><b>Open Price</b></td>
+    <td><b>High Price </b></td>
+    <td><b>Low Price </b></td>
+ 
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<th  class="text-success">{{bnbo}}</th>
+<th  class="text-success">{{bnbh}}</th>
+<th class="text-danger">{{bnbl}}</th>
+</tr>
+</tbody>
+
+    </table>
+
+  </div>
+  <div class="col-sm-6">
+    
+  
+
+
+  </div>
+</div>
+
+{% comment %} ////////////////////////done  {% endcomment %}
+  
+      </div>
+  
+  
+  
+    </div>
+  
+  
+  
+  
+  </div>
+  
+  
+  </div>
+
+{% comment %} bnb service ends here  {% endcomment %}
+
+
+
+</div>
+
+
+<!-- Use any element to open the sidenav -->
+
+
+<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+
+
+
+
+
+{% comment %} main content starts form here  {% endcomment %}
+
+
+<script  type="text/javascript"  src="{% static 'home/js/webapi.js' %}"></script>
+<script type="text/javascript"  src="{% static 'home/js/btc.js' %}"></script>
+<script  type="text/javascript" src="{% static 'home/js/eth.js' %}"></script>
+<script  type="text/javascript" src="{% static 'home/js/bnb.js' %}"></script>
+
+{% endblock content %}

@@ -1,0 +1,17 @@
+body{
+    background-color: #000;
+}
+
+.header{
+    background-image: url(./../images/bck.jpg);
+    width: 100%;
+    height: 350px;
+    background-color: #003;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+html{
+    background-color: #003;
+}

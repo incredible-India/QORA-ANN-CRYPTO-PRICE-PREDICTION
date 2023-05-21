@@ -1,0 +1,9 @@
+.bcheader{
+    background-image: url(./../images/inv.webp);
+    width: 100%;
+    height: 600px;
+}
+
+body{
+    background-image: linear-gradient( black,rgb(39, 32, 2))
+}
