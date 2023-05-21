@@ -20,6 +20,9 @@
   <a href="#btc">Bitcoin <i class="fa-solid fa-bitcoin-sign"></i></a>
   <a href="#eth">Etherium <i class="fa-brands fa-ethereum"></i></a>
   <a href="#bnb">Binance <img src="{% static 'home/images/bnb.png'%}" class="img-fluid" style="height: 20px"></a>
+  <a href="{% url 'investment' %}">Legal Terms  <i class="fas fa-cog"></i></a>
+  <a href="{% url 'annmodel' %}">Future Scope <img src="{% static 'home/images/prediction.png'%}" class="img-fluid" style="height: 20px"></a>
+  <a href="{% url 'crypto' %}">Cryptocurrencies <i class="fa-solid fa-coins"></i> </a>
 
 </div>
 
@@ -265,9 +268,9 @@
 
 <tbody>
   <tr>
-    <th  class="text-success">{{btco}}</th>
-    <th  class="text-success">{{btch}}</th>
-    <th class="text-danger">{{btcl}}</th>
+    <th  class="text-success">₹{{btco}}</th>
+    <th  class="text-success">₹{{btch}}</th>
+    <th class="text-danger">₹{{btcl}}</th>
   </tr>
 </tbody>
 
@@ -389,9 +392,9 @@
 
 <tbody>
 <tr>
-<th  class="text-success">{{etho}}</th>
-<th  class="text-success">{{ethh}}</th>
-<th class="text-danger">{{ethl}}</th>
+<th  class="text-success">₹{{etho}}</th>
+<th  class="text-success">₹{{ethh}}</th>
+<th class="text-danger">₹{{ethl}}</th>
 </tr>
 </tbody>
 
@@ -518,9 +521,9 @@
 
 <tbody>
 <tr>
-<th  class="text-success">{{bnbo}}</th>
-<th  class="text-success">{{bnbh}}</th>
-<th class="text-danger">{{bnbl}}</th>
+<th  class="text-success" id="bnbo">₹{{bnbo}}</th>
+<th  class="text-success"> ₹{{bnbh}}</th>
+<th class="text-danger"> ₹{{bnbl}}</th>
 </tr>
 </tbody>
 

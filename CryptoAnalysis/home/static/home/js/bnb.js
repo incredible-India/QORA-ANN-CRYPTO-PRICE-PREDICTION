@@ -43,7 +43,7 @@ bnws.addEventListener('message', (event) => {
     document.getElementById("bnbbbidq").innerText = (JSON.parse(event.data).B)
     document.getElementById("bnbbaskq").innerText = (JSON.parse(event.data).A)
 
-    
+
  
    
 });
