@@ -1,30 +1,32 @@
-# QORA-ANN CRYPTO PRICE PREDICTION
-A web app gives crypto price predictions
+# QORA-ANN Crypto Price Prediction
 
+Welcome to the **QORA-ANN Crypto Price Prediction** web app, designed to provide accurate cryptocurrency price forecasts!
 
-# to run this project
-## install python version > 3.0 
+## How to Run This Project
 
+### Prerequisites
+- **Python version**: Ensure you have Python 3.0 or higher installed on your system.
 
+### Setup Instructions
+1. **Navigate to the CryptoAnalysis Directory**
+   - Open your command prompt or PowerShell and go to the `CryptoAnalysis` directory, where you'll find the `requirements.txt` file.
 
-## goto the CryptoAnalysis directory there requirements.py file will be there
+2. **Install Dependencies**
+   - Run the following command to install all required packages:
+   ```bash
+   pip install -r requirements.txt
 
-## 1 : open cmd or powershell and write the command
+3. **Start the Application**
+   - After installing the packages, execute this command in the same directory (where manage.py is located):
+     ```bash
+     python manage.py runserver
 
->>pip install -r requirements.txt
+Explore the App
+Once the server is running, feel free to explore the various features of the app and discover insightful crypto predictions.
+Need Help?
+For more information or assistance, you can reach out via:
 
-## 2: once all packages will be installed write one command in cmd or powershell in same directory (CryptoAnalysis where manage.py file will be there)
-
->>python manage.py runserver
-
-## project will run now
-
-## 3: now you can explore the project
-
-## for more info contact 8604470501 or mail himanshu399231@gmail.com or github id  https://github.com/incredible-India/QORA-ANN-CRYPTO-PRICE-PREDICTION
-
-
-
-
-
+Phone: 8604470501
+Email: himanshu399231@gmail.com
+GitHub: QORA-ANN Crypto Price Prediction
 
